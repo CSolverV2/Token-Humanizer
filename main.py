@@ -21,8 +21,8 @@ class EditMe:
 
     def _get_build_number(self):
         try:
-            response = self.session.get("https://raw.githubusercontent.com/Pixens/Discord-Build-Number/refs/heads/main/discord.json")
-            return int(response.json()['client_build_number'])
+            response = self.session.get("https://api.sockets.lol/discord/build")
+            return int(response.json()['build'])
         except:
             return 345368
 
